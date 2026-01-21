@@ -1,0 +1,24 @@
+wallpaper: "/home/XeLiuS/Downloads/1325118.png"
+
+special:
+    background: "#08090C"
+    foreground: "#dfdad2"
+    cursor: "#dfdad2"
+
+colors:
+    color0: "#08090C"
+    color1: "#797065"
+    color2: "#85796A"
+    color3: "#7F827D"
+    color4: "#958876"
+    color5: "#AFA392"
+    color6: "#C5BAA8"
+    color7: "#dfdad2"
+    color8: "#9c9893"
+    color9: "#797065"
+    color10: "#85796A"
+    color11: "#7F827D"
+    color12: "#958876"
+    color13: "#AFA392"
+    color14: "#C5BAA8"
+    color15: "#dfdad2"
