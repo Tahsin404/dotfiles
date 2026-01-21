@@ -1,8 +1,10 @@
 /* The outer window */
 window {
     margin: 0px;
-    border: 2px solid #89b4fa; /* Match your button color */
-    background-color: #1e1e2e; /* Dark background */
+    min-width: 200px;
+    min-height: 350px;
+    border: 3px solid #dfdad2; /* Match your button color */
+    background-color: #958876; /* Dark background */
     border-radius: 20px; /* The "Bubbly" roundness */
 }
 
@@ -10,8 +12,10 @@ window {
 #input {
     margin: 5px;
     border: none;
-    color: #cdd6f4;
-    background-color: #313244;
+    color: #C5BAA8;
+    font-weight: bold;
+    font-family: "Monofur";
+    background-color: #413D38;
     border-radius: 15px; /* Round input bar */
 }
 
@@ -32,7 +36,8 @@ window {
 
 /* When you select an app */
 #entry:selected {
-    background-color: #89b4fa;
-    color: #1e1e2e;
+    background-color: #9c9893;
+    color: #958876;
+    font-size: 15px;
     font-weight: bold;
 }
