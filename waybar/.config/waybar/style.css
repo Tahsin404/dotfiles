@@ -38,7 +38,7 @@ window#waybar.hidden {
   border: 3px solid alpha(@color1, 0.6);
   border-radius: 45px;
   margin: 10px 10px;
-  padding: 0px 13px 0px 8px;
+  padding: 0px 12px 0px 7px;
   color: @foreground;
 }
 /* --- WORKSPACES --- */

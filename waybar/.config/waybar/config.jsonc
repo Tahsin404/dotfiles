@@ -220,7 +220,7 @@
         "on-click": "wlogout"
     },
     "custom/wofi": {
-        "format" : "󰣇 ",
+        "format" : "󰣇",
         "on-click": "pkill wofi || wofi --show drun",
         "tooltip": false
     },
