@@ -43,7 +43,7 @@ window#waybar.hidden {
 }
 /* --- WORKSPACES --- */
 #workspaces {
-    min-width: 283px;
+    min-width: 290px;
     
     /* FIX: pywal colors into each workspaces */
     background-color: alpha(@background, 0.6);
@@ -58,7 +58,7 @@ window#waybar.hidden {
 
 #workspaces button {
     padding: 0px;
-    margin: 5px 8px;
+    margin: 5px 10px;
     
     /* Inactive buttons: slightly lighter dot */
     background-color: alpha(@foreground, 0.2);

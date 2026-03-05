@@ -7,10 +7,10 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias get='sudo pacman -S'
+alias get='sudo pacman -Syu'
 alias remove='sudo pacman -Rns'
 alias yremove='yay -Rns'
-alias install='yay'
+alias install='yay -Syu'
 alias fetch='fastfetch'
 alias f='ranger'
 alias vim='nvim'

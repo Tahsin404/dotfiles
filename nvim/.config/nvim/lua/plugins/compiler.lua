@@ -4,6 +4,14 @@ return {
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
     opts = {},
+    keys = {
+      -- Open the compiler menu
+      { "<leader>co", "<cmd>CompilerOpen<cr>", desc = "Compiler Open" },
+      -- Redo the last selected option (useful for repeated runs)
+      { "<leader>cr", "<cmd>CompilerRedo<cr>", desc = "Compiler Redo" },
+      -- Toggle the results window
+      { "<leader>ct", "<cmd>CompilerToggleResults<cr>", desc = "Compiler Toggle Results" },
+    },
   },
   { -- The task runner we use
     "stevearc/overseer.nvim",
