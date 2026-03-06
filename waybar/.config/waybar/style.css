@@ -1,4 +1,4 @@
-@import "../../.cache/wal/colors-waybar.css";
+@import "colors-waybar.css";
 
 * {
     font-family: "Monofur", monospace;
@@ -57,7 +57,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 0px;
+    padding: 2px 5px 3px 0px;
     margin: 5px 10px;
     
     /* Inactive buttons: slightly lighter dot */
@@ -96,6 +96,30 @@ window#waybar.hidden {
     
     padding: 0px 12px;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
+}
+/* --- HOVER STATES --- */
+
+/* Fix for inactive buttons on hover */
+#workspaces button:hover {
+    background-color: alpha(@foreground, 0.6);
+    background-image: none; /* KILLS the default GTK white square overlay */
+    box-shadow: none;
+    outline: none;
+}
+
+/* Fix for the active button on hover */
+#workspaces button.active:hover {
+    background-color: @color1; 
+    background-image: none; /* KILLS the default GTK white square overlay */
+    border-radius: 45px; 
+    box-shadow: none;
+    outline: none;
+    color: transparent;
+}
+
+/* Failsafe: Ensures no internal labels try to draw their own backgrounds */
+#workspaces button:hover label {
+    background: transparent;
 }
 
 /* --- OTHER MODULES --- */
@@ -150,7 +174,7 @@ window#waybar.hidden {
 tooltip {
     background-color: alpha(@background, 0.9);
     border: 3px solid alpha(@color1, 0.6);
-    border-radius: 35px;
+    border-radius: 100px;
     padding: 20px; 
     animation-name: slide-down; 
     animation-duration: 0.5s; 
