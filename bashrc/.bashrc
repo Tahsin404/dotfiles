@@ -19,6 +19,7 @@ alias phone='aft-mtp-mount ~/mnt'
 alias uphone='fusermount -u ~/mnt'
 alias neo='cmatrix'
 alias restow='cd ~/dotfiles && stow -R -v -t ~ */ && cd -'
+alias superupdate='sudo reflector --country "Bangladesh,India,Singapore" --latest 10 --sort score --save /etc/pacman.d/mirrorlist && yay -Syu'
 alias pipes='pipes.sh -p 10 -r 0'
 PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
