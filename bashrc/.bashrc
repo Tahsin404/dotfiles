@@ -7,7 +7,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias get='sudo pacman -Syu'
+alias get='sudo pacman -Syu --ignore linux-zen,linux-zen-headers,linux-api-headers'
 alias remove='sudo pacman -Rns'
 alias yremove='yay -Rns'
 alias install='yay -Syu'
