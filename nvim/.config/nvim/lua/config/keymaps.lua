@@ -59,30 +59,45 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 -- Press <leader>r to instantly change the word under the cursor, then use . and n
 vim.keymap.set("n", "<leader>r", "*cgn", { desc = "Replace word under cursor" })
 
--- Compile and run C code directly
+-- Compile and run C/C++ code directly
 -- Press <Space> + c + c to run
 vim.keymap.set("n", "<leader>cc", function()
-  local file = vim.fn.expand("%:p") -- Full path to .c file
+  local file = vim.fn.expand("%:p") -- Full path to file
+  local ext = vim.fn.expand("%:e") -- File extension (c, cpp, etc.)
   local dir = vim.fn.expand("%:p:h") -- Directory of current file
   local filename = vim.fn.expand("%:t:r") -- Filename without extension
   local bin_dir = dir .. "/bin"
   local output = bin_dir .. "/" .. filename -- Path to executable
 
-  -- The Fix: Added 'echo' for clarity and 'read' to pause the terminal
+  -- Determine compiler based on file extension
+  local compiler = ""
+  if ext == "c" then
+    compiler = "gcc"
+  elseif ext == "cpp" or ext == "cc" or ext == "cxx" then
+    compiler = "g++"
+  else
+    print("Error: Not a C or C++ file!")
+    return
+  end
+
+  -- Build the command using the dynamically selected compiler
   local cmd = string.format(
-    "mkdir -p %s && gcc %s -o %s -Wall -lm && time %s; echo -e '\\n--- Press Enter to close ---'; read",
+    "mkdir -p %s && %s %s -o %s -Wall -lm && time %s; echo -e '\\n--- Press Enter to close ---'; read",
     bin_dir,
+    compiler,
     file,
     output,
     output
   )
 
+  -- Open the terminal
   if _G.Snacks then
     _G.Snacks.terminal.open(cmd, {
       win = { position = "float" },
-      title = " C Build & Run ",
+      -- Dynamically change the title so you know which compiler ran
+      title = string.format(" %s Build & Run ", string.upper(compiler)),
     })
   else
     vim.cmd("split | term " .. cmd)
   end
-end, { desc = "Compile and Run C (Wait for Enter)" })
+end, { desc = "Compile and Run C/C++ (Wait for Enter)" })
