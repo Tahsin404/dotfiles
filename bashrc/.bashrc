@@ -12,7 +12,7 @@ export PATH=$PATH:/home/xelius/.spicetify
 export EDITOR=nvim
 
 # REDACTED: Please generate a new key and paste it here
-export GEMINI_API_KEY="AIzaSyDH8okfNh8wmqO1zhHY-hwD6Y9p7lyXpHg"
+export GEMINI_API_KEY="INSERT YOUR API"
 
 # ------------------------------------
 # Navigation & File Management
