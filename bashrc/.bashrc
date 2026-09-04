@@ -33,6 +33,18 @@ alias mv='mv -i'
 # ------------------------------------
 # Archive & Compression
 # ------------------------------------
+zipfolder() {
+  zip -r "$1.zip" "$1"
+}
+
+tarfolder() {
+  tar -czvf "$1.tar.gz" "$1"
+}
+
+rarfolder() {
+  rar a "$1.rar" "$1"
+}
+
 alias uzip='unzip'
 alias urar='unrar x'
 alias utar='tar -xvf'
