@@ -20,9 +20,36 @@ fi
 # ------------------------------------
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ls='ls -lah --color=auto' # Combined your two 'ls' aliases
+alias ls='ls -lh --color=auto' # Combined your two 'ls' aliases
 alias grep='grep --color=auto'
 alias f='ranger'
+delete() {
+  local force_flag=""
+  local recursive_flag=""
+
+  # Loop through arguments to check for custom keywords
+  while [[ "$1" =~ ^(force|folder)$ ]]; do
+    if [ "$1" = "force" ]; then
+      force_flag="f"
+    elif [ "$1" = "folder" ]; then
+      recursive_flag="r"
+    fi
+    shift # Remove the keyword from arguments so only the file/folder path remains
+  done
+
+  # Combine flags if any were triggered (e.g., -rf or -r)
+  local flags=""
+  if [ -n "$force_flag" ] || [ -n "$recursive_flag" ]; then
+    flags="-${recursive_flag}${force_flag}"
+  fi
+
+  # Execute rm with the dynamic flags and the remaining target path
+  if [ -n "$flags" ]; then
+    rm "$flags" "$@"
+  else
+    rm "$@"
+  fi
+}
 
 # ------------------------------------
 # Safety Nets
@@ -49,6 +76,10 @@ rarfolder() {
 alias uzip='unzip'
 alias urar='unrar x'
 alias utar='tar -xvf'
+
+cpp() {
+  enscript -C -Ecpp --color -o temp.ps "$1" && ps2pdf temp.ps "${1%.cpp}.pdf" && rm temp.ps
+}
 
 # ------------------------------------
 # Package Management (Pacman & Yay)
