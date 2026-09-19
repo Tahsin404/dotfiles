@@ -77,6 +77,10 @@ cpp() {
   enscript -C -Ecpp --color -o temp.ps "$1" && ps2pdf temp.ps "${1%.cpp}.pdf" && rm temp.ps
 }
 
+topdf() {
+  enscript -C -o temp.ps "$1" && ps2pdf temp.ps "$1.pdf" && rm -f temp.ps
+}
+
 # ------------------------------------
 # Package Management (Pacman & Yay)
 # ------------------------------------
