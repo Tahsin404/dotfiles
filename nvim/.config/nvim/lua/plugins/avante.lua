@@ -5,11 +5,15 @@ return {
   version = false, -- Always pull the latest updates
   opts = {
     mode = "agentic",
-    provider = "gemini",
-    -- Move the gemini settings inside 'providers'
-    providers = {
-      gemini = {
-        model = "gemini-2.5-flash",
+    provider = "omniroute",
+    vendors = {
+      omniroute = {
+        __inherited_from = "openai",
+        endpoint = "http://localhost:20128/v1",
+        -- OmniRoute requires no API key locally, so we feed it a dummy string
+        api_key_name = "cmd:echo 'dummy-key'",
+        -- Set this to the exact model name you enabled in the OmniRoute dashboard
+        model = "auto",
         timeout = 30000,
       },
     },

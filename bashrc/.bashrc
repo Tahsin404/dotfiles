@@ -11,10 +11,6 @@
 export PATH=$PATH:/home/xelius/.spicetify
 export EDITOR=nvim
 
-if [[ -f ~/.GEMINI_API_KEY ]]; then
-  source ~/.GEMINI_API_KEY
-fi
-
 # ------------------------------------
 # Navigation & File Management
 # ------------------------------------

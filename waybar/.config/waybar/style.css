@@ -94,7 +94,7 @@ window#waybar.hidden {
   /* FIX: Added 'px' */
   border-radius: 45px;
 
-  padding: 0px 12px;
+  padding: 0px 13px 0px 6px;
   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
 }
 /* --- HOVER STATES --- */
