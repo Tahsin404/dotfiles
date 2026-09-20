@@ -84,12 +84,15 @@ topdf() {
 # ------------------------------------
 # Package Management (Pacman & Yay)
 # ------------------------------------
-alias get='sudo pacman -Syu'
-alias remove='sudo pacman -Rns'
-alias install='yay -Syu' # Note: This runs a full system update before installing
-alias yremove='yay -Rns'
+# System Updates
+alias update='yay -Syu'
 alias superupdate='sudo reflector --country Bangladesh,India,Singapore --download-timeout 10 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist && yay -Syyu'
-alias clean='yay -Sc' # Cleans package cache for both pacman and yay
+
+# Package Management
+alias install='yay -S'
+alias remove='yay -Rns'
+alias clean='yay -Sc'
+alias orphans='yay -Yc'
 
 # ------------------------------------
 # Devices & Mounts
